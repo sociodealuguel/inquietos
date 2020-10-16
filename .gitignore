@@ -1,0 +1,75 @@
+# This is a template .gitignore file for git-managed WordPress projects.
+#
+# Fact: you don't want WordPress core files, or your server-specific
+# configuration files etc., in your project's repository. You just don't.
+#
+# Solution: stick this file up your repository root (which it assumes is
+# also the WordPress root directory) and add exceptions for any plugins,
+# themes, and other directories that should be under version control.
+#
+# See the comments below for more info on how to add exceptions for your
+# content. Or see git's documentation for more info on .gitignore files:
+# http://kernel.org/pub/software/scm/git/docs/gitignore.html
+
+# CLEANING THE REPOSITORY
+# If you've added this .gitignore file in an existing repository, you may want to remove the content that should be ignored. Here is how to do that.
+# you can use a wildcard to remove all files, and then add all the files back, and then commit the updates.
+
+# $ git commit -m "Pre Cleanup"
+# $ git rm -r --cached .
+# $ git add .
+# $ git commit -m ".gitignore setup and cleaned up"
+
+
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!wp-content/
+!.gitignore
+
+# Ignore everything in the "wp-content" directory, except the "plugins"
+# and "themes" directories.
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+!wp-content/_htaccess_original/
+
+# OSX Filesystem
+.DS_Store
+
+# For VS Code
+.vscode
+
+# For PHPStorm etc.
+.idea
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
